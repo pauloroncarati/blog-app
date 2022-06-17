@@ -2,16 +2,15 @@
 
 [Curso de Node.js - Victor Lima](https://www.youtube.com/playlist?list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B)
 
-## Instalando todas dependências do projeto
-
-	npm i
-
 ## Instalando dependências do projeto individualmente
 
 npm
 
-	npm install -g npm
-	npm init
+	npm install npm
+
+node
+
+	npm install node
 
 Express
 
