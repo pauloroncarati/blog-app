@@ -8,7 +8,7 @@ npm
 
 	npm install npm
 
-node
+Node
 
 	npm install node
 
@@ -27,3 +27,11 @@ Body Parser
 Mongoose
 
 	npm install mongoose --save
+
+Express Session
+
+	npm install express-session
+
+Connect Flash
+
+	npm install connect-flash
