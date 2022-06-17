@@ -1,0 +1,24 @@
+<h3>Nova categoria</h3>
+<div class="card">
+  <div class="card-body">
+    <form action="/admin/categorias/nova" method="POST" class="row g-3 needs-validation" novalidate>
+      <div class="col-md-12">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" value="Nome da categoria" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-md-12">
+        <label for="slug" class="form-label">Slug</label>
+        <input type="text" class="form-control" id="slug" name="slug" value="Slug da categoria" required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-success" type="submit">Criar categoria</button>
+      </div>
+    </form>
+  </div>
+</div>
