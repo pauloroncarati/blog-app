@@ -15,9 +15,9 @@ Express
 
 Handlebars
 
-	npm install express-handlebars --save
+	npm install express3-handlebars --save
 
-BodyParser
+Body Parser
 
 	npm install body-parser --save
 
