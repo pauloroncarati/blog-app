@@ -19,7 +19,7 @@ Express
 
 Handlebars
 
-	npm i express-handlebars
+	npm install express-handlebars
 
 Body Parser
 
