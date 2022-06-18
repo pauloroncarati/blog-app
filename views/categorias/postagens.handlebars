@@ -1,0 +1,26 @@
+<h4 class='mb-4'>{{categoria.nome}}</h4>
+
+{{#each postagens}}
+  <div class='card mb-3'>
+    <div class='card-body'>
+      <div class='row align-items-center'>
+        <h4 class='col'>{{titulo}}</h4>
+        <span
+          class='col-auto badge text-bg-secondary me-2'
+        >{{categoria.nome}}</span>
+      </div>
+      <p>{{descricao}}</p>
+
+      <a href='/postagem/{{slug}}'><button
+          class='btn btn-success btn-sm'
+          type='submit'
+        >Leia mais</button></a>
+    </div>
+
+    <div class='card-footer text-muted'>
+      <small>{{data}}</small>
+    </div>
+  </div>
+{{else}}
+  <h5>Nenhuma postagem</h5>
+{{/each}}

@@ -1,0 +1,11 @@
+<h4>Categorias</h4>
+
+<ul class='list-group'>
+  {{#each categorias}}
+    <a href='/categorias/{{slug}}' class='text-decoration-none'>
+      <li class='list-group-item'>{{nome}}</li>
+    </a>
+  {{else}}
+    <li class='list-group-item'>Nenhuma categoria</li>
+  {{/each}}
+</ul>
