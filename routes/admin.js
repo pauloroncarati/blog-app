@@ -9,10 +9,6 @@ router.get('/', (req, res) => {
   res.render('admin/index');
 });
 
-router.get('/posts', (req, res) => {
-  res.send('admin: posts');
-});
-
 router.get('/categorias', (req, res) => {
   Categoria.find()
     .sort({ date: 'desc' })
@@ -29,6 +25,7 @@ router.get('/categorias', (req, res) => {
 router.get('/categorias/add', (req, res) => {
   res.render('admin/addcategorias');
 });
+
 router.post('/categorias/nova', (req, res) => {
   var erros = [];
 
@@ -116,6 +113,21 @@ router.post('/categorias/deletar', (req, res) => {
     .catch((err) => {
       req.flash('error_msg', 'Erro ao deletar a categoria');
       res.redirect('/admin/categorias');
+    });
+});
+
+router.get('/postagens', (req, res) => {
+  res.render('admin/postagens');
+});
+
+router.get('/postagens/add', (req, res) => {
+  Categoria.find()
+    .lean()
+    .then((categorias) => {
+      res.render('admin/addpostagem', { categorias: categorias });
+    })
+    .catch((err) => {
+      req.flash('error_msg', 'Erro ao carregar o formulário');
     });
 });
 
