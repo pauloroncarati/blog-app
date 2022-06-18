@@ -1,3 +1,4 @@
+const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -102,6 +103,18 @@ router.post('/categorias/edit', (req, res) => {
     })
     .catch((err) => {
       req.flash('error_msg', 'Erro ao editar categoria');
+      res.redirect('/admin/categorias');
+    });
+});
+
+router.post('/categorias/deletar', (req, res) => {
+  Categoria.deleteOne({ _id: req.body.id })
+    .then(() => {
+      req.flash('success_msg', 'Categoria deletado com sucesso');
+      res.redirect('/admin/categorias');
+    })
+    .catch((err) => {
+      req.flash('error_msg', 'Erro ao deletar a categoria');
       res.redirect('/admin/categorias');
     });
 });
