@@ -26,10 +26,11 @@
 					<td>{{data}}</td>
 					<td><a class="btn btn-outline-primary btn-sm" href="/admin/postagens/edit/{{_id}}" role="button"><i class="bi bi-pencil-square"></i></a></td>
 					<td>
-						<form action="/admin/postagens/deletar" method="post">
+						<a class="btn btn-outline-danger btn-sm" href="/admin/postagens/deletar/{{_id}}" role="button"><i class="bi bi-trash3"></i></a>
+						{{!-- <form action="/admin/postagens/deletar" method="post">
 							<input type="hidden" name="id" value="{{_id}}">
 							<button class="btn btn-outline-danger btn-sm" type="submit"><i class="bi bi-trash3"></i></button>
-						</form>
+						</form> --}}
 						</td>
 				</tr>
 				{{else}}
