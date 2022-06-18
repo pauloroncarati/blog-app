@@ -1,5 +1,8 @@
 <h2>Categorias</h2>
-<div class="card">
+
+<a class="btn btn-success" href="/admin/categorias/add" role="button">Nova categoria</a>
+
+<div class="card mt-4">
   <div class="card-body">
 		<table class="table">
 			<thead>
@@ -7,6 +10,7 @@
 					<th scope="col">Nome</th>
 					<th scope="col">Slug</th>
 					<th scope="col">Data de criação</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -15,6 +19,7 @@
 					<td>{{nome}}</td>
 					<td>{{slug}}</td>
 					<td>{{date}}</td>
+					<td><a class="btn btn-outline-success btn-sm" href="/admin/categorias/edit/{{_id}}" role="button"><i class="bi bi-pencil-square"></i></a></td>
 				</tr>
 				{{else}}
 				{{/each}}
@@ -22,7 +27,3 @@
 		</table>
   </div>
 </div>
-
-<hr>
-
-<a href="/admin/categorias/add"><button type="button" class="btn btn-success">Nova categoria</button></a>
