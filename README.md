@@ -26,7 +26,7 @@ Body Parser
 
 Mongoose
 
-	npm install mongoose --save
+	npm install mongoose@5.0.0 --save
 
 Express Session
 
