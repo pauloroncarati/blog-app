@@ -39,3 +39,8 @@ Connect Flash
 BcryptJS
 
 	npm install bcryptjs@2.4.3 --save
+
+Passportjs
+
+	npm install passport@0.4.0 --save
+	npm install passport-local@1.0.0 --save
