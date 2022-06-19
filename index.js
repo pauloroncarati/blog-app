@@ -12,13 +12,14 @@ require('./models/Postagem');
 const Postagem = mongoose.model('postagens');
 require('./models/Categoria');
 const Categoria = mongoose.model('categorias');
+const usuarios = require('./routes/usuario');
 
 // Configurações - Início
 
 // Sessão
 app.use(
   session({
-    secret: 'cursodenode',
+    secret: 'blogapp',
     resave: true,
     saveUninitialized: true,
   })
@@ -132,6 +133,7 @@ app.get('/404', (req, res) => {
 });
 
 app.use('/admin', admin);
+app.use('/usuario', usuarios);
 
 // Outros
 const PORT = 8081;
