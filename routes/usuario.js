@@ -3,6 +3,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 require('../models/Usuario');
 const Usuario = mongoose.model('usuario');
+const bcrypt = require('bcryptjs');
 
 router.get('/registro', (req, res) => {
   res.render('usuarios/registro');
@@ -34,6 +35,44 @@ router.post('/registro', (req, res) => {
   if (erros.length > 0) {
     res.render('usuarios/registro', { erros: erros });
   } else {
+    Usuario.findOne({ email: req.body.email })
+      .then((usuario) => {
+        if (usuario) {
+          req.flash('error_msg', 'Email já utilizado');
+          res.redirect('/usuario/registro');
+        } else {
+          const novoUsuario = new Usuario({
+            nome: req.body.nome,
+            email: req.body.email,
+            senha: req.body.senha,
+          });
+
+          bcrypt.genSalt(10, (erro, salt) => {
+            bcrypt.hash(novoUsuario.senha, salt, (erro, hash) => {
+              if (erro) {
+                req.flash('error_msg', 'Erro ao criar usuário');
+                res.redirect('/');
+              } else {
+                novoUsuario.senha = hash;
+                novoUsuario
+                  .save()
+                  .then(() => {
+                    req.flash('success_msg', 'Usuário criado com sucesso');
+                    res.redirect('/');
+                  })
+                  .catch((err) => {
+                    req.flash('error_msg', 'Erro ao criar o usuário');
+                    res.redirect('/usuario/registro');
+                  });
+              }
+            });
+          });
+        }
+      })
+      .catch((err) => {
+        req.flash('error_msg', 'Erro interno');
+        res.redirect('/');
+      });
   }
 });
 

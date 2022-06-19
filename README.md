@@ -35,3 +35,7 @@ Express Session
 Connect Flash
 
 	npm install connect-flash
+
+BcryptJS
+
+	npm install bcryptjs@2.4.3 --save
