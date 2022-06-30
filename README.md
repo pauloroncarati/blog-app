@@ -1,8 +1,6 @@
 # Blog App
 
-[Curso de Node.js - Victor Lima](https://www.youtube.com/playlist?list=PLJ_KhUnlXUPtbtLwaxxUxHqvcNQndmI4B)
-
-## Instalando dependências do projeto individualmente
+## Instalando dependências do projeto
 
 npm
 
